@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Playfair+Display:wght@700;900&display=swap');
+
+:root {
+    --primary: #0A192F;
+    --secondary: #112240;
+    --accent: #C5A059;
+    --text-primary: #F8FAFC;
+    --text-secondary: #94A3B8;
+    --white: #FFFFFF;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: none !important;
+    /* 強制所有元素都隱藏原生游標 */
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--primary);
+    color: var(--text-primary);
+    overflow-x: hidden;
+    line-height: 1.6;
+    cursor: none;
+    /* 隱藏原生游標以使用自定義游標 */
+    scroll-behavior: smooth;
+}
+
+/* 確保可點擊元素在自定義游標下有一致感 */
+a,
+button,
+.interactive {
+    cursor: none !important;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Playfair Display', serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    width: 100%;
+}
+
+/* 核心響應式控制：確保類別權重足夠 */
+.desktop-only {
+    display: none !important;
+}
+
+.mobile-only {
+    display: block !important;
+}
+
+@media (min-width: 1024px) {
+    .desktop-only {
+        display: flex !important;
+    }
+
+    .mobile-only {
+        display: none !important;
+    }
+}
+
+.gold-gradient-text {
+    background: linear-gradient(135deg, var(--accent) 0%, #FFFFFF 50%, var(--accent) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: var(--accent);
+}
+
+.btn-premium {
+    background-color: var(--accent);
+    color: var(--primary);
+    padding: 0.75rem 1.5rem;
+    font-weight: 700;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+    white-space: nowrap;
+}
+
+.btn-premium:hover {
+    background-color: #D4B982;
+    transform: translateY(-2px);
+}
+
+section {
+    padding: 8rem 0;
+}
+
+@media (max-width: 768px) {
+    section {
+        padding: 5rem 0;
+    }
+}
